@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Museeb Ahmad – Game Developer Portfolio</title>
+  <meta name="description" content="Unity Game Developer portfolio showcasing shipped games, WebGL demos, trailers, and contact links." />
+  <meta property="og:title" content="Museeb Ahmad – Game Developer" />
+  <meta property="og:description" content="Unity Game Dev – mobile & PC games, tools, and prototypes." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="assets/og-image.png" />
+  <meta name="theme-color" content="#0ea5e9" />
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  
+  <header class="site-header blur">
+    <div class="container row">
+      <a class="brand" href="#"><img src="assets/logo.svg" alt="Logo" width="32" height="32"><span>Museeb Ahmad</span></a>
+      <nav class="nav">
+        <button id="themeToggle" title="Toggle theme" aria-label="Toggle theme">🌓</button>
+        <a href="#games">Games</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+        <a class="btn small" href="assets/Museeb_Ahmad_Resume.pdf" target="_blank" rel="noopener">Resume</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero container">
+      <div class="hero-text">
+        <h1><span class="gradient">Unity Game Developer</span> crafting fun, high‑performance play.</h1>
+        <p class="lede">4+ years building mobile & PC titles with <strong>Unity/C#</strong>, DOTween, Ads Mediation (AppLovin, AdMob), Firebase, and optimized pipelines for iOS & Android.</p>
+        <div class="cta">
+          <a class="btn primary" href="#games">See Games</a>
+          <a class="btn ghost" href="mailto:musaibahmed830@gmail.com">Hire Me</a>
+        </div>
+        <ul class="quick-facts">
+          <li>📱 10M+ cumulative downloads (placeholder)</li>
+          <li>🕹️ Hyper-casual, arcade, and casual</li>
+          <li>🚀 Shipped with small teams, fast</li>
+        </ul>
+      </div>
+      <div class="hero-art">
+        <img src="assets/hero.svg" alt="Floating gamepad with orbs">
+      </div>
+    </section>
+
+    <section id="games" class="container">
+      <div class="section-head row">
+        <h2>Featured <span class="gradient">Games</span></h2>
+        <div class="filters row">
+          <button class="chip active" data-filter="all">All</button>
+          <button class="chip" data-filter="mobile">Mobile</button>
+          <button class="chip" data-filter="pc">PC</button>
+          <button class="chip" data-filter="web">WebGL</button>
+          <button class="chip" data-filter="prototype">Prototype</button>
+        </div>
+      </div>
+
+      <div id="grid" class="grid">
+        <!-- Duplicate/modify cards below to add your games -->
+        <article class="card" data-tags="mobile">
+          <img loading="lazy" src="assets/game1.svg" alt="Game 1 cover" class="cover">
+          <div class="card-body">
+            <h3>Rush Runner</h3>
+            <p>An endless runner with crisp feel, juicy feedback, and level streaming for zero hitches.</p>
+            <div class="tags">
+              <span>Unity</span><span>Mobile</span><span>DOTween</span>
+            </div>
+            <div class="actions">
+              <a class="btn small" href="https://play.google.com/store" target="_blank" rel="noopener">Google Play</a>
+              <button class="btn small ghost" data-video="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Trailer</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="card" data-tags="web">
+          <img loading="lazy" src="assets/game2.svg" alt="Game 2 cover" class="cover">
+          <div class="card-body">
+            <h3>Brick Blaster WebGL</h3>
+            <p>Pure skill breakout with silky paddle physics and reactive VFX.</p>
+            <div class="tags">
+              <span>Unity</span><span>WebGL</span><span>2D</span>
+            </div>
+            <div class="actions">
+              <a class="btn small" href="#" target="_blank" rel="noopener">Play WebGL</a>
+              <button class="btn small ghost" data-video="https://www.youtube.com/watch?v=oHg5SJYRHA0">Trailer</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="card" data-tags="pc">
+          <img loading="lazy" src="assets/game3.svg" alt="Game 3 cover" class="cover">
+          <div class="card-body">
+            <h3>Neon Drifter</h3>
+            <p>Top‑down drift racer with spline AI and ScriptableObject car setup.</p>
+            <div class="tags">
+              <span>Unity</span><span>PC</span><span>3D</span>
+            </div>
+            <div class="actions">
+              <a class="btn small" href="#" target="_blank" rel="noopener">Download</a>
+              <button class="btn small ghost" data-video="https://www.youtube.com/watch?v=2Z4m4lnjxkY">Trailer</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="card" data-tags="prototype">
+          <img loading="lazy" src="assets/game4.svg" alt="Game 4 cover" class="cover">
+          <div class="card-body">
+            <h3>Boat Kid x Rauf</h3>
+            <p>Stylized prototype blending cricket energy with Pacu Jalur inspirations.</p>
+            <div class="tags">
+              <span>Prototype</span><span>Stylized</span>
+            </div>
+            <div class="actions">
+              <a class="btn small" href="#" target="_blank" rel="noopener">Devlog</a>
+              <button class="btn small ghost" data-video="https://www.youtube.com/watch?v=V-_O7nl0Ii0">Trailer</button>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="about" class="container about">
+      <h2>About</h2>
+      <p>I'm <strong>Museeb Ahmad</strong> from Pakistan — a Unity developer who loves clean architecture, juicy feel, and getting games out the door. Comfortable across gameplay, UI, build pipelines, and ad mediation.</p>
+      <ul class="kudos">
+        <li>🏆 Featured on Google Play (placeholder)</li>
+        <li>🧩 Built internal tools for level authoring & live‑ops</li>
+        <li>🔧 CocoaPods/iOS signing, Android builds, Firebase & Remote Config</li>
+      </ul>
+      <div class="skills row">
+        <div>
+          <h3>Core</h3>
+          <ul>
+            <li>Unity, C#, DOTween</li>
+            <li>URP, Shader Graph, VFX Graph</li>
+            <li>ScriptableObjects, Addressables</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Platforms</h3>
+          <ul>
+            <li>Android, iOS</li>
+            <li>PC (Windows)</li>
+            <li>WebGL</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Ops</h3>
+          <ul>
+            <li>AppLovin, AdMob, Unity Ads</li>
+            <li>Firebase, Analytics, Remote Config</li>
+            <li>Git, GitHub Actions</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="container contact">
+      <h2>Contact</h2>
+      <p>Open to Unity Gameplay/Tools roles (remote or onsite). For collaborations or hires, reach out:</p>
+      <div class="contact-grid">
+        <a class="contact-card" href="mailto:musaibahmed830@gmail.com">
+          <span>📧</span><div><strong>Email</strong><small>musaibahmed830@gmail.com</small></div>
+        </a>
+        <button class="contact-card" id="copyEmail" aria-label="Copy email">
+          <span>📋</span><div><strong>Copy Email</strong><small>Click to copy</small></div>
+        </button>
+        <a class="contact-card" href="https://github.com/musaibahmed830" target="_blank" rel="noopener">
+          <span>💻</span><div><strong>GitHub</strong><small>github.com/musaibahmed830</small></div>
+        </a>
+        <a class="contact-card" href="https://www.linkedin.com" target="_blank" rel="noopener">
+          <span>🔗</span><div><strong>LinkedIn</strong><small>linkedin.com/in/your-handle</small></div>
+        </a>
+        <a class="contact-card" href="https://itch.io" target="_blank" rel="noopener">
+          <span>🎮</span><div><strong>Itch.io</strong><small>itch.io/profile/your-handle</small></div>
+        </a>
+      </div>
+    </section>
+
+    <footer class="site-footer container row">
+      <small>© <span id="year"></span> Museeb Ahmad — Built with ❤️ in Unity spirit.</small>
+      <div class="row">
+        <a href="https://github.com/musaibahmed830" target="_blank" rel="noopener">GitHub</a>
+        <a href="#" id="toTop">Back to top ↑</a>
+      </div>
+    </footer>
+  </main>
+
+  <!-- Video Modal -->
+  <dialog id="videoModal" aria-label="Trailer modal">
+    <div class="modal-content">
+      <button class="close" id="closeModal" aria-label="Close">✕</button>
+      <div class="video-wrap">
+        <iframe id="videoFrame" src="" title="Game trailer" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      </div>
+    </div>
+  </dialog>
+
+  <script src="script.js"></script>
+</body>
+</html>
