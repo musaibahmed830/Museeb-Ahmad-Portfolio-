@@ -1,0 +1,99 @@
+
+:root{
+  --bg:#0b0a10;
+  --surface:#12101a;
+  --muted:#bfb9d9;
+  --text:#f5f2ff;
+  --purple:#a855f7;
+  --purple-neon:#b26cff;
+  --card:#171423;
+  --outline:#6b21a8;
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  background: radial-gradient(1200px 800px at 20% 10%, rgba(178,108,255,0.15), transparent 40%),
+              radial-gradient(900px 700px at 80% 30%, rgba(168,85,247,0.12), transparent 45%),
+              var(--bg);
+  color:var(--text);
+  font-family: ui-sans-serif, system-ui, Segoe UI, Roboto, Helvetica, Arial, Apple Color Emoji, Segoe UI Emoji;
+  overflow-x:hidden;
+}
+#particles{
+  position:fixed; inset:0; z-index:0; pointer-events:none;
+}
+.hero{
+  position:relative;
+  z-index:1;
+  padding:80px 24px 40px;
+  text-align:center;
+}
+.hero .glow{
+  font-size: clamp(32px, 6vw, 64px);
+  line-height:1.05;
+  text-shadow: 0 0 12px rgba(178,108,255,0.75), 0 0 28px rgba(178,108,255,0.35);
+  animation:pulse 2.4s ease-in-out infinite;
+}
+.tagline{color:var(--muted); margin:8px 0 16px; font-size:clamp(14px,2.2vw,18px)}
+.cta{display:flex; gap:12px; justify-content:center; flex-wrap:wrap}
+.btn{
+  background:linear-gradient(135deg, var(--purple), var(--purple-neon));
+  color:white; border:none; padding:12px 18px; border-radius:12px;
+  text-decoration:none; font-weight:700; box-shadow:0 0 18px rgba(178,108,255,.35);
+  transition: transform .15s ease, box-shadow .15s ease, filter .15s;
+}
+.btn:hover{ transform:translateY(-2px); box-shadow:0 6px 22px rgba(178,108,255,.45) }
+.btn.outline{
+  background:transparent; border:1.5px solid var(--purple-neon); color:var(--text)
+}
+.btn.small{ padding:8px 12px; font-weight:600; border-radius:10px }
+
+.section{ padding:40px 20px; position:relative; z-index:1 }
+.section-title{ font-size:clamp(22px,3.5vw,32px); margin:0 0 6px }
+.muted{ color:var(--muted); max-width:900px; margin:0 auto 16px; text-align:center }
+.chips{ list-style:none; display:flex; gap:8px; justify-content:center; padding:0; margin:10px 0 0 }
+.chips li{ background:rgba(178,108,255,.12); color:#e8dbff; padding:8px 12px; border-radius:999px; border:1px solid rgba(178,108,255,.25) }
+
+/* Puzzle */
+.puzzle-board{ max-width:1100px; margin:24px auto; display:grid; grid-template-columns:1fr; gap:20px }
+@media(min-width:900px){ .puzzle-board{ grid-template-columns:1fr 1fr } }
+.slots, .pieces{ background:var(--card); border:1px solid rgba(178,108,255,.25); padding:16px; border-radius:16px; min-height:220px }
+.slots{ display:grid; grid-template-columns:repeat(3,1fr); gap:16px }
+.pieces{ display:flex; flex-wrap:wrap; gap:16px; align-content:flex-start }
+.slot{ border:2px dashed rgba(178,108,255,.35); border-radius:14px; height:160px; display:flex; align-items:center; justify-content:center; transition:border-color .2s, box-shadow .2s }
+.slot.active{ border-color:var(--purple-neon); box-shadow:0 0 20px rgba(178,108,255,.35) }
+.piece{ width:140px; height:140px; border-radius:12px; border:1px solid rgba(255,255,255,.08); background:#0f0c16; cursor:grab; box-shadow:0 4px 14px rgba(0,0,0,.35); transition: transform .15s ease, box-shadow .15s }
+.piece:active{ cursor:grabbing; transform:scale(.98) }
+.piece:hover{ box-shadow:0 8px 22px rgba(178,108,255,.25) }
+.unlock{ margin-top:16px; text-align:center }
+.hidden{ display:none }
+
+/* Cards */
+.grid{
+  display:grid; gap:16px;
+  grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));
+  max-width:1200px; margin:0 auto;
+}
+.card{
+  background:var(--card);
+  border:1px solid rgba(178,108,255,.15);
+  border-radius:16px;
+  overflow:hidden;
+  transition:transform .15s ease, box-shadow .2s ease, border-color .2s;
+}
+.card:hover{
+  transform: translateY(-4px);
+  box-shadow: 0 18px 40px rgba(178,108,255,.18);
+  border-color: rgba(178,108,255,.35);
+}
+.card-icon{ width:100%; height:180px; object-fit:cover; background:#0f0c16 }
+.card-body{ padding:14px }
+.card-body h3{ margin:0 0 10px; font-size:18px }
+.actions{ display:flex; gap:10px; flex-wrap:wrap }
+
+.footer{
+  text-align:center; padding:30px 16px; color:var(--muted)
+}
+.footer a{ color:#d8baff }
+@keyframes pulse{ 0%,100%{ filter:drop-shadow(0 0 0 rgba(178,108,255,0.4)) } 50%{ filter:drop-shadow(0 0 18px rgba(178,108,255,0.65)) } }

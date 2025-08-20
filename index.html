@@ -1,66 +1,252 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Museeb Ahmad - Game Portfolio</title>
-  <style>
-    body { font-family: Arial, sans-serif; text-align: center; background: #f4f4f9; margin: 0; padding: 20px; }
-    h1 { color: #333; }
-    .puzzle { display: flex; justify-content: center; gap: 20px; margin-top: 40px; flex-wrap: wrap; }
-    .slot, .icon { width: 100px; height: 100px; border: 2px dashed #aaa; border-radius: 12px; display: flex; align-items: center; justify-content: center; background: white; }
-    .icon { cursor: grab; border: none; }
-    #message { margin-top: 30px; font-size: 20px; font-weight: bold; color: green; }
-    a.button { display: inline-block; margin-top: 15px; padding: 10px 20px; background: #007BFF; color: white; border-radius: 8px; text-decoration: none; }
-  </style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Museeb Ahmad — Unity Game Developer</title>
+  <link rel="preload" href="style.css" as="style">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>🎮 Museeb Ahmad - Game Developer Portfolio</h1>
-  <p>Drag and match the game icons to unlock the portfolio!</p>
+  <canvas id="particles"></canvas>
+  <header class="hero">
+    <div class="hero-inner">
+      <h1 class="glow">Museeb Ahmad</h1>
+      <p class="tagline">Unity Game Developer • Mobile & Casual Games</p>
+      <div class="cta">
+        <a class="btn" href="Resume.pdf" download>⬇ Download Resume</a>
+        <a class="btn outline" href="#games">View Games</a>
+      </div>
+    </div>
+  </header>
 
-  <div class="puzzle">
-    <div class="slot" data-icon="burger"></div>
-    <div class="slot" data-icon="fridge"></div>
-    <div class="slot" data-icon="longneck"></div>
-    <div class="slot" data-icon="emoji"></div>
-  </div>
+  <section id="about" class="section">
+    <h2 class="section-title">About Me</h2>
+    <p class="muted">
+      I craft engaging, performant mobile games using Unity & C#. I’ve contributed to
+      idle, puzzle, runner and arcade titles from prototype to live ops — shipping to
+      both Google Play and the App Store.
+    </p>
+    <ul class="chips">
+      <li>Unity</li><li>C#</li><li>Mobile</li><li>Gameplay</li><li>UI/UX</li><li>Publishing</li>
+    </ul>
+  </section>
 
-  <div class="puzzle" id="icons">
-    <img src="icons/burger.png" class="icon" draggable="true" data-icon="burger">
-    <img src="icons/fridge.png" class="icon" draggable="true" data-icon="fridge">
-    <img src="icons/longneck.png" class="icon" draggable="true" data-icon="longneck">
-    <img src="icons/emoji.png" class="icon" draggable="true" data-icon="emoji">
-  </div>
+  <section id="puzzle" class="section">
+    <h2 class="section-title">Portfolio Puzzle 🎮</h2>
+    <p class="muted">Drag each icon into its matching neon slot to unlock my links.</p>
 
-  <div id="message"></div>
+    <div class="puzzle-board">
+      <div class="slots">
+        <div class="slot" data-match="burger-idle-restaurant"></div><div class="slot" data-match="long-neck-run"></div><div class="slot" data-match="fridge-organizing"></div><div class="slot" data-match="nuts-bolts-puzzle"></div><div class="slot" data-match="attack-hole"></div><div class="slot" data-match="emoji-puzzle-connect"></div>
+      </div>
+      <div class="pieces">
+        <img class="piece" draggable="true" data-id="burger-idle-restaurant" src="icons/burger-idle-restaurant.png" alt="burger-idle-restaurant icon"/><img class="piece" draggable="true" data-id="long-neck-run" src="icons/long-neck-run.png" alt="long-neck-run icon"/><img class="piece" draggable="true" data-id="fridge-organizing" src="icons/fridge-organizing.png" alt="fridge-organizing icon"/><img class="piece" draggable="true" data-id="nuts-bolts-puzzle" src="icons/nuts-bolts-puzzle.png" alt="nuts-bolts-puzzle icon"/><img class="piece" draggable="true" data-id="attack-hole" src="icons/attack-hole.png" alt="attack-hole icon"/><img class="piece" draggable="true" data-id="emoji-puzzle-connect" src="icons/emoji-puzzle-connect.png" alt="emoji-puzzle-connect icon"/>
+      </div>
+    </div>
 
-  <script>
-    const slots = document.querySelectorAll('.slot');
-    const icons = document.querySelectorAll('.icon');
-    let matched = 0;
+    <div id="unlock" class="unlock hidden">
+      <p>🎉 Portfolio Unlocked!</p>
+      <div class="cta">
+        <a class="btn" href="Resume.pdf" download>⬇ Download Resume</a>
+        <a class="btn outline" href="#games">Browse Games</a>
+        <a class="btn outline" href="https://github.com/" target="_blank">GitHub</a>
+      </div>
+    </div>
+  </section>
 
-    icons.forEach(icon => {
-      icon.addEventListener('dragstart', e => {
-        e.dataTransfer.setData('icon', icon.dataset.icon);
-      });
-    });
+  <section id="games" class="section">
+    <h2 class="section-title">Published Games</h2>
+    <div class="grid">
+      
+      <article class="card">
+        <img src="icons/burger-idle-restaurant.png" alt="Burger Idle Restaurant icon" class="card-icon"/>
+        <div class="card-body">
+          <h3>Burger Idle Restaurant</h3>
+          <div class="actions">
+            <a class="btn small" href="https://play.google.com/store/apps/details?id=com.csquad.burger.idle.shop.resturant&hl=en_US" target="_blank">View Store Page</a>
+          </div>
+        </div>
+      </article>
+      <article class="card">
+        <img src="icons/long-neck-run.png" alt="Long Neck Run icon" class="card-icon"/>
+        <div class="card-body">
+          <h3>Long Neck Run</h3>
+          <div class="actions">
+            <a class="btn small" href="https://play.google.com/store/apps/details?id=com.csquad.lnr.longneck.run.real&pcampaignid=web_share" target="_blank">View Store Page</a>
+          </div>
+        </div>
+      </article>
+      <article class="card">
+        <img src="icons/fridge-organizing.png" alt="Fridge Organizing icon" class="card-icon"/>
+        <div class="card-body">
+          <h3>Fridge Organizing</h3>
+          <div class="actions">
+            <a class="btn small" href="https://play.google.com/store/apps/details?id=com.csquad.fridgeorganizing.restockandroid&pcampaignid=web_share" target="_blank">View Store Page</a>
+          </div>
+        </div>
+      </article>
+      <article class="card">
+        <img src="icons/nuts-bolts-puzzle.png" alt="Nuts & Bolts Puzzle icon" class="card-icon"/>
+        <div class="card-body">
+          <h3>Nuts & Bolts Puzzle</h3>
+          <div class="actions">
+            <a class="btn small" href="https://play.google.com/store/apps/details?id=com.csquad.nuts.bolts.screw.puzzle&pcampaignid=web_share" target="_blank">View Store Page</a>
+          </div>
+        </div>
+      </article>
+      <article class="card">
+        <img src="icons/attack-hole.png" alt="Attack Hole (Arcade) icon" class="card-icon"/>
+        <div class="card-body">
+          <h3>Attack Hole (Arcade)</h3>
+          <div class="actions">
+            <a class="btn small" href="https://play.google.com/store/apps/details?id=com.csquad.arcade.attackhole.io&pcampaignid=web_share" target="_blank">View Store Page</a>
+          </div>
+        </div>
+      </article>
+      <article class="card">
+        <img src="icons/emoji-puzzle-connect.png" alt="Emoji Puzzle Connect icon" class="card-icon"/>
+        <div class="card-body">
+          <h3>Emoji Puzzle Connect</h3>
+          <div class="actions">
+            <a class="btn small" href="https://play.google.com/store/apps/details?id=com.csquad.emoji.puzzle.connect&pcampaignid=web_share" target="_blank">View Store Page</a>
+          </div>
+        </div>
+      </article>
+      <article class="card">
+        <img src="icons/paper-plane-evolution.png" alt="Paper Plane Evolution (iOS) icon" class="card-icon"/>
+        <div class="card-body">
+          <h3>Paper Plane Evolution (iOS)</h3>
+          <div class="actions">
+            <a class="btn small" href="https://apps.apple.com/pk/app/paper-plane-evolution/id1673788310" target="_blank">View Store Page</a>
+          </div>
+        </div>
+      </article>
+      <article class="card">
+        <img src="icons/arcade-oil-tycoon.png" alt="Arcade Oil Tycoon: Gas Station (iOS) icon" class="card-icon"/>
+        <div class="card-body">
+          <h3>Arcade Oil Tycoon: Gas Station (iOS)</h3>
+          <div class="actions">
+            <a class="btn small" href="https://apps.apple.com/pk/app/arcade-oil-tycoon-gas-station/id6461417250" target="_blank">View Store Page</a>
+          </div>
+        </div>
+      </article>
+      <article class="card">
+        <img src="icons/all-stars-ice-hockey.png" alt="All Stars: Ice Hockey (iOS) icon" class="card-icon"/>
+        <div class="card-body">
+          <h3>All Stars: Ice Hockey (iOS)</h3>
+          <div class="actions">
+            <a class="btn small" href="https://apps.apple.com/pk/app/all-stars-ice-hockey-games/id6449499946" target="_blank">View Store Page</a>
+          </div>
+        </div>
+      </article>
+      <article class="card">
+        <img src="icons/hair-salon-idle.png" alt="Hair Salon Idle (iOS) icon" class="card-icon"/>
+        <div class="card-body">
+          <h3>Hair Salon Idle (iOS)</h3>
+          <div class="actions">
+            <a class="btn small" href="https://apps.apple.com/pk/app/hair-salon-idle-clicker-game/id1663771240" target="_blank">View Store Page</a>
+          </div>
+        </div>
+      </article>
+      <article class="card">
+        <img src="icons/ramp-outlaws.png" alt="Ramp Outlaws: Car Crash Master (iOS) icon" class="card-icon"/>
+        <div class="card-body">
+          <h3>Ramp Outlaws: Car Crash Master (iOS)</h3>
+          <div class="actions">
+            <a class="btn small" href="https://apps.apple.com/pk/app/ramp-outlaws-car-crash-master/id1661789588" target="_blank">View Store Page</a>
+          </div>
+        </div>
+      </article>
+      <article class="card">
+        <img src="icons/18-wheeler.png" alt="18 Wheeler: Big Trucks (iOS) icon" class="card-icon"/>
+        <div class="card-body">
+          <h3>18 Wheeler: Big Trucks (iOS)</h3>
+          <div class="actions">
+            <a class="btn small" href="https://apps.apple.com/pk/app/18-wheeler-big-trucks-games/id6446351818" target="_blank">View Store Page</a>
+          </div>
+        </div>
+      </article>
+      <article class="card">
+        <img src="icons/toy-box-blast.png" alt="Toy Box Blast icon" class="card-icon"/>
+        <div class="card-body">
+          <h3>Toy Box Blast</h3>
+          <div class="actions">
+            <a class="btn small" href="https://play.google.com/store/apps/details?id=com.bibergames.toyboxblast&pcampaignid=web_share" target="_blank">View Store Page</a>
+          </div>
+        </div>
+      </article>
+      <article class="card">
+        <img src="icons/vikings-2.png" alt="Vikings 2 icon" class="card-icon"/>
+        <div class="card-body">
+          <h3>Vikings 2</h3>
+          <div class="actions">
+            <a class="btn small" href="https://play.google.com/store/apps/details?id=com.pid.vikings2&pcampaignid=web_share" target="_blank">View Store Page</a>
+          </div>
+        </div>
+      </article>
+      <article class="card">
+        <img src="icons/galaxy-attack.png" alt="Galaxy Attack: Shooter icon" class="card-icon"/>
+        <div class="card-body">
+          <h3>Galaxy Attack: Shooter</h3>
+          <div class="actions">
+            <a class="btn small" href="https://play.google.com/store/apps/details?id=com.galaxyattack.invadershootero&pcampaignid=web_share" target="_blank">View Store Page</a>
+          </div>
+        </div>
+      </article>
+      <article class="card">
+        <img src="icons/sort-puzzle-matching.png" alt="Sort Puzzle Matching icon" class="card-icon"/>
+        <div class="card-body">
+          <h3>Sort Puzzle Matching</h3>
+          <div class="actions">
+            <a class="btn small" href="https://play.google.com/store/apps/details?id=com.mbso.sortpuzzlematching&pcampaignid=web_share" target="_blank">View Store Page</a>
+          </div>
+        </div>
+      </article>
+      <article class="card">
+        <img src="icons/kitties-merge.png" alt="Kitties Merge icon" class="card-icon"/>
+        <div class="card-body">
+          <h3>Kitties Merge</h3>
+          <div class="actions">
+            <a class="btn small" href="https://play.google.com/store/apps/details?id=com.games.kittiesmergegp&pcampaignid=web_share" target="_blank">View Store Page</a>
+          </div>
+        </div>
+      </article>
+      <article class="card">
+        <img src="icons/tile-master-connect-triple.png" alt="Tile Master: Connect Triple icon" class="card-icon"/>
+        <div class="card-body">
+          <h3>Tile Master: Connect Triple</h3>
+          <div class="actions">
+            <a class="btn small" href="https://play.google.com/store/apps/details?id=com.zelabgame.tilemaster.connectripletile&pcampaignid=web_share" target="_blank">View Store Page</a>
+          </div>
+        </div>
+      </article>
+      <article class="card">
+        <img src="icons/brain-puzzle-training.png" alt="Brain Puzzle Training icon" class="card-icon"/>
+        <div class="card-body">
+          <h3>Brain Puzzle Training</h3>
+          <div class="actions">
+            <a class="btn small" href="https://play.google.com/store/apps/details?id=brain.puzzle.training&pcampaignid=web_share" target="_blank">View Store Page</a>
+          </div>
+        </div>
+      </article>
+      <article class="card">
+        <img src="icons/iso-blocks.png" alt="Iso Blocks icon" class="card-icon"/>
+        <div class="card-body">
+          <h3>Iso Blocks</h3>
+          <div class="actions">
+            <a class="btn small" href="https://play.google.com/store/apps/details?id=com.ppl.isoblocks&pcampaignid=web_share" target="_blank">View Store Page</a>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
 
-    slots.forEach(slot => {
-      slot.addEventListener('dragover', e => e.preventDefault());
-      slot.addEventListener('drop', e => {
-        e.preventDefault();
-        const iconType = e.dataTransfer.getData('icon');
-        if (slot.dataset.icon === iconType && !slot.hasChildNodes()) {
-          const dragged = document.querySelector(`[data-icon='${iconType}']`);
-          slot.appendChild(dragged);
-          matched++;
-          if (matched === slots.length) {
-            document.getElementById('message').innerHTML = 
-              "🎉 You solved Museeb’s Portfolio Puzzle!<br><a class='button' href='https://github.com/'>View Full Portfolio</a>";
-          }
-        }
-      });
-    });
-  </script>
+  <footer class="footer">
+    <p>© 2025 Museeb Ahmad</p>
+    <p><a href="mailto:youremail@example.com">youremail@example.com</a> · <a href="https://github.com/" target="_blank">GitHub</a> · <a href="#" target="_blank">LinkedIn</a></p>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
