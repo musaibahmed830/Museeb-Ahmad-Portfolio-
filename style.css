@@ -467,3 +467,7 @@ body{
   .actions{ gap:8px }
   .actions .btn{ flex:1 1 100%; text-align:center }
 }
+
+/* Debug: make chatbot easy to spot */
+.chat-toggle{ outline:3px solid #00e5ff !important; outline-offset:2px }
+.chat-window{ outline:3px solid #ffea00 !important; outline-offset:-4px }
